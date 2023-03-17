@@ -1,3 +1,4 @@
+
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
@@ -11,17 +12,17 @@ class MyGui:
 
         #initialize and configure the window
         self.root = tk.Tk()
-        self.root.geometry('800x900')
+        self.root.geometry('800x675')
         self.root.title('Rugby Event Coder')
         self.root.resizable(False, False)
-        self.root.iconbitmap("rugby-ball.ico")
+        #self.root.iconbitmap("rugby-ball.ico")
 
         # text box for the output file name
         self.file_name = tk.Entry(self.root)
-        self.file_name.place(x=120, y=10)
+        self.file_name.place(relx=0.17, rely=0.015)
 
         self.file_name_label = tk.Label(self.root, text='Output File Name:')
-        self.file_name_label.place(x=10, y=10)
+        self.file_name_label.place(relx=0.01, rely=0.015)
 
         # frame to allow the choice of possible file extensions
         self.extensions_frame = tk.Frame(self.root)
@@ -38,13 +39,13 @@ class MyGui:
 
         #button to save file(s)
         self.button = tk.Button(self.root, text='Save Data', command=self.save_files)
-        self.button.place(x=730, y=10)
+        self.button.place(relx=0.87, rely=0.01)
 
         #separators
         separator = ttk.Separator(self.root, orient='horizontal')
-        separator.place(relx=0.01, rely=0.07, relwidth=0.98, relheight=1)
+        separator.place(relx=0.01, rely=0.09, relwidth=0.98, relheight=1)
 
-        self.extensions_frame.place(x=120, y=30)
+        self.extensions_frame.place(relx=0.17, rely=0.05)
 
         #radiobuttons for player numbers
         self.radiobutton_state = tk.IntVar()
@@ -53,18 +54,18 @@ class MyGui:
         self.number_frame_home.columnconfigure(0, weight=1)        
 
         for x in range(23):
-            ttk.Radiobutton(self.number_frame_home, text=str(x+1), variable=self.radiobutton_state, value=x+1, command=self.selected_color).grid(row=x, column=0, ipady=5.5)
-        self.number_frame_home.place(x=15, y=100)
+            ttk.Radiobutton(self.number_frame_home, text=str(x+1), variable=self.radiobutton_state, value=x+1, command=self.selected_color).grid(row=x, column=0)
+        self.number_frame_home.place(relx=0.01, rely=0.1)
 
         self.number_frame_away = tk.Frame(self.root)
         self.number_frame_away.columnconfigure(0, weight=1)
 
         for x in range(23):
-            ttk.Radiobutton(self.number_frame_away, text=str(x+1), variable=self.radiobutton_state, value=(x+1)*-1, command=self.selected_color).grid(row=x, column=0, ipady=5.5)
-        self.number_frame_away.place(x=120, y=100)
+            ttk.Radiobutton(self.number_frame_away, text=str(x+1), variable=self.radiobutton_state, value=(x+1)*-1, command=self.selected_color).grid(row=x, column=0)
+        self.number_frame_away.place(relx=0.1, rely=0.1)
 
         #selection
-        self.selection = tk.Label(text='H: #00', font=('Segoe UI', 25, 'Roman'))
+        self.selection = tk.Label(text='H: #00', font=('Segoe UI', 25))
         self.selection.place(x=680, y=75)
 
         #root
