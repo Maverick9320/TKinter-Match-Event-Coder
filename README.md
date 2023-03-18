@@ -4,6 +4,9 @@ A Tkinter windows app with a button layout that enters data in a .csv to easily 
 Work In Progress. 
 
 To Do:
-  - Add buttons for each event
   - Link to pandas dataframe
   - Test System
+
+Future:
+  - Display pandas dataframe
+  - Have video playing options
