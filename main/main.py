@@ -14,7 +14,7 @@ class MainWindow:
         self.root.geometry('800x675')
         self.root.title('Rugby Event Coder')
         self.root.resizable(False, False)
-        self.root.iconbitmap("rugby-ball.ico")
+        #self.root.iconbitmap("rugby-ball.ico")
 
         # text box for the output file name
         self.file_name = tk.Entry(self.root)
